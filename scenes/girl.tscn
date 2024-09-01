@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/obj_interaction.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/sprites/Girl_frontRight.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15, 23.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 22, 27.5 )
+
+[node name="girl" instance=ExtResource( 1 )]
+text = {
+1: "texto 1",
+2: "texto 2",
+3: "textos infinitos"
+}
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2( -1, 0.5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -1, 0.5 )
+shape = SubResource( 2 )
