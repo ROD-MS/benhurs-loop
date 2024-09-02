@@ -1,17 +1,13 @@
 extends Node2D
+class_name global
 
-var keysGetted: Array = [true, false]
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
+var keysGetted: Dictionary
 
 func open_door(key):
-	keysGetted.remove(key)
-	keysGetted.insert(key, true)
+	keysGetted[key] = false
 	
 func check_door(key):
-	var isLocked = !keysGetted[key]
-	return isLocked
+	return keysGetted[key]
+
+func new_door(id, isLocked):
+	keysGetted[id] = isLocked

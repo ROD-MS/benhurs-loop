@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/computer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/girl.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/sprites/BLOCK.png" type="Texture" id=4]
 [ext_resource path="res://scenes/key.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/scripts/global.gd" type="Script" id=6]
-[ext_resource path="res://scenes/door_basement.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/door.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -36,7 +34,7 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 0/z_index = 0
 
 [node name="level" type="Node2D"]
-position = Vector2( 1, 0 )
+position = Vector2( 1, -1 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 398.0 ]
@@ -54,23 +52,19 @@ tile_data = PoolIntArray( -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 899, 62 )
 
-[node name="girl" parent="." instance=ExtResource( 3 )]
-position = Vector2( 755, 198 )
-text = {
-1: "texto 1",
-2: "texto 2",
-3: "textos infinitos",
-4: "eai rapaiz"
-}
-
 [node name="computer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 275, -99 )
-
-[node name="key" parent="." instance=ExtResource( 5 )]
-position = Vector2( 525, 18 )
+position = Vector2( 255, 86 )
 
 [node name="door" parent="." instance=ExtResource( 8 )]
-position = Vector2( 586, 95 )
+position = Vector2( 589, 94 )
 
-[node name="door_basement" parent="." instance=ExtResource( 7 )]
-position = Vector2( 448, 95 )
+[node name="parents_door" parent="." instance=ExtResource( 8 )]
+position = Vector2( 463, 95 )
+text = {
+1: "Parece estar trancada"
+}
+id = 1
+isLocked = true
+
+[node name="parents_key" parent="." instance=ExtResource( 5 )]
+position = Vector2( 522, 26 )

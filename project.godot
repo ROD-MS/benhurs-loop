@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "StaticBody2D",
+"class": "Interaction",
+"language": "GDScript",
+"path": "res://assets/scripts/interaction.gd"
+}, {
+"base": "Node2D",
+"class": "global",
+"language": "GDScript",
+"path": "res://assets/scripts/global.gd"
+} ]
+_global_script_class_icons={
+"Interaction": "",
+"global": ""
+}
+
 [application]
 
 config/name="Benhur’s Loop"

@@ -20,7 +20,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 
-	moviment()
+	moviments_actions()
 	sprites_animation()
 	
 	
@@ -32,7 +32,7 @@ func _process(delta):
 	move_and_slide(Vector2(velX, velY))
 	
 	
-func moviment():
+func moviments_actions():
 	# BOTÕES
 	dirX = Input.get_axis("left", "right")
 	dirY = Input.get_axis("up", "down")
