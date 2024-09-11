@@ -1,6 +1,9 @@
 extends Node2D
 class_name global
 
+onready var task = $HUD_task/task
+
+
 var keysGetted: Dictionary
 
 func open_door(key):
@@ -11,3 +14,6 @@ func check_door(key):
 
 func new_door(id, isLocked):
 	keysGetted[id] = isLocked
+
+func new_task():
+	task.new_task()

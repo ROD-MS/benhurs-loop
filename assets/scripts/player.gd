@@ -8,7 +8,8 @@ var dirY = 0
 var velX = 0
 var velY = 0
 var dir = 0
-onready var hud = $"../HUD"
+onready var hud_textbox = $"../HUD_textbox"
+
 onready var animation = $AnimatedSprite
 
 
@@ -19,13 +20,12 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-
 	moviments_actions()
 	sprites_animation()
 	
 	
 	# PARANDO O PLAYER QUANDO ESTIVER EM UM DIÁLOGO
-	if hud.get_child_count() == 1:
+	if hud_textbox.get_child_count() == 1:
 		velX = 0
 		velY = 0
 

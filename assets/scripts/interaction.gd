@@ -10,7 +10,7 @@ export var text: Dictionary = {}
 # NODES
 onready var textbox = $textbox
 const DIALOG = preload("res://scenes/textbox.tscn")
-onready var hud = $"../HUD"
+onready var hud_textbox = $"../HUD_textbox"
 onready var label = $Label
 onready var level = $".."
 
@@ -18,7 +18,7 @@ onready var level = $".."
 func new_dialog():
 	var new_dialog = DIALOG.instance()
 	new_dialog.text = text
-	hud.add_child(new_dialog)
+	hud_textbox.add_child(new_dialog)
 
 func _on_Area2D_area_entered(area):
 	interaction = area

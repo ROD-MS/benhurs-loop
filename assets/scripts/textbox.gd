@@ -19,12 +19,13 @@ func _process(delta):
 	if action:
 		if label.get_visible_characters() != label.get_total_character_count():
 			label.visible_characters = label.get_total_character_count()
-		elif id < text.size(): 
+		elif id < text.size():
 			id += 1
 			label.text = text[id]
 			label.percent_visible = 0
 		else:
 			queue_free()
+		print(id)
 
 func _on_Timer_timeout():
 	if label.get_visible_characters() != label.get_total_character_count():
