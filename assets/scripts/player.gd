@@ -9,14 +9,23 @@ var velX = 0
 var velY = 0
 var dir = 0
 onready var hud_textbox = $"../HUD_textbox"
-
+onready var camera_2d = $Camera2D
 onready var animation = $AnimatedSprite
+
+export var fixedCamera: bool
+export var cameraZoom_x: float = 0.7
+export var cameraZoom_y: float = 0.7
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	animation.play("idle_down")
-	
+	camera_2d.zoom = Vector2(cameraZoom_x, cameraZoom_y)
+	if fixedCamera:
+		camera_2d.current = false
+	else:
+		camera_2d.current = true
+
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

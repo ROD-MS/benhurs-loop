@@ -27,12 +27,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Benhur’s Loop"
-run/main_scene="res://scenes/level.tscn"
+run/main_scene="res://scenes/quarto_benhur.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://assets/scripts/global.gd"
+Transition="*res://scenes/Transition.tscn"
 
 [display]
 

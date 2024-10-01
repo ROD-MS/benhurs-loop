@@ -13,7 +13,7 @@ const DIALOG = preload("res://scenes/textbox.tscn")
 onready var hud_textbox = $"../HUD_textbox"
 onready var label = $Label
 onready var level = $".."
-
+onready var animation = $AnimatedSprite
 
 func new_dialog():
 	var new_dialog = DIALOG.instance()
