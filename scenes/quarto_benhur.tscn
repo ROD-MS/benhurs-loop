@@ -9,6 +9,8 @@
 [ext_resource path="res://scenes/transition_area.tscn" type="PackedScene" id=7]
 
 [node name="quarto_benhur" type="Node2D"]
+position = Vector2( 0, -1 )
+scale = Vector2( 1.00092, 1 )
 script = ExtResource( 4 )
 
 [node name="HUD_task" type="CanvasLayer" parent="."]
@@ -50,8 +52,8 @@ position = Vector2( 412, 224 )
 scale = Vector2( 2, 2 )
 
 [node name="transition_area" parent="." instance=ExtResource( 7 )]
-position = Vector2( 384, 224 )
-scale = Vector2( 2, 2 )
+position = Vector2( 391.64, 225 )
+scale = Vector2( 1.27911, -3.39121 )
 next_room = "res://scenes/level.tscn"
 
 [node name="player" parent="." instance=ExtResource( 1 )]
