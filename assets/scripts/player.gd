@@ -1,13 +1,13 @@
 extends KinematicBody2D
 
 #CONSTANTES E VARIAVEIS
-const SPEED = 200
+const SPEED = 150
 var inspect = 0
 var dirX = 0
 var dirY = 0
 var velX = 0
 var velY = 0
-var dir = 0
+var dir = 1
 
 onready var hud_textbox = $"../HUD_textbox"
 onready var camera_2d = $Camera2D
@@ -57,6 +57,8 @@ func sprites_animation():
 	
 	# IDLE
 	if velX == 0 and velY == 0:
+		if dir == 0:
+			animation.play("idle_up")
 		if dir == 1:
 			animation.play("idle_down")
 		if dir == 2:
@@ -76,6 +78,8 @@ func sprites_animation():
 	# WALK UP
 	if velY < 0:
 		animation.flip_h = false
+		if dirX == 0:
+			animation.play("walk_up")
 		dir =  0
 		
 	# WALK LEFT

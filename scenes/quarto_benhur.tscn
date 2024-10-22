@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tiles/floor.tres" type="TileSet" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://assets/tiles/wall_furniture.tres" type="TileSet" id=5]
 [ext_resource path="res://scenes/door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/transition_area.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/objects/estante_livro.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/objects/benhur_room/mesa_cabeceira.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/objects/benhur_room/cama_benhur.tscn" type="PackedScene" id=10]
 
 [node name="quarto_benhur" type="Node2D"]
 position = Vector2( 0, -1 )
@@ -18,8 +21,8 @@ script = ExtResource( 4 )
 [node name="task" parent="HUD_task" instance=ExtResource( 3 )]
 visible = false
 task = {
-1: "Preciso achar meus pais",
-2: "Ah, acho que eles estão na sala",
+1: "Vou ver minha mãe!",
+2: "Verdade, ainda não escovei os dentes, devo estar com bafo.",
 3: "Que coisa estranha. Mas não vou perder meu foco",
 4: "Não estão aqui.. onde podem estar?"
 }
@@ -31,7 +34,7 @@ scale = Vector2( 2, 2 )
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 262166, 0, 0, 262167, 0, 65537, 327693, 0, 0, 327694, 0, 65537, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 1, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 65537, 524307, 0, 0, 524308, 0, 0, 524309, 0, 1, 524310, 0, 0, 524311, 0, 0, 589837, 0, 0, 589838, 0, 65537, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 65536 )
+tile_data = PoolIntArray( 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 262161, 1, 0, 262162, 1, 0, 262163, 1, 0, 262164, 1, 0, 262165, 1, 0, 262166, 1, 0, 262167, 1, 0, 327693, 1, 0, 327694, 1, 1, 327695, 1, 0, 327696, 1, 0, 327697, 1, 0, 327698, 1, 0, 327699, 1, 0, 327700, 1, 0, 327701, 1, 0, 327702, 1, 1, 327703, 1, 0, 393229, 1, 0, 393230, 1, 0, 393231, 1, 0, 393232, 1, 0, 393233, 1, 0, 393234, 1, 0, 393235, 1, 0, 393236, 1, 0, 393237, 1, 0, 393238, 1, 0, 393239, 1, 0, 458765, 1, 0, 458766, 1, 1, 458767, 1, 0, 458768, 1, 0, 458769, 1, 1, 458770, 1, 0, 458771, 1, 0, 458772, 1, 0, 458773, 1, 0, 458774, 1, 0, 458775, 1, 0, 524301, 1, 1, 524302, 1, 0, 524303, 1, 0, 524304, 1, 1, 524305, 1, 0, 524306, 1, 0, 524307, 1, 0, 524308, 1, 0, 524309, 1, 1, 524310, 1, 0, 524311, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 589844, 1, 0, 589845, 1, 0, 589846, 1, 0, 589847, 1, 1, 655373, 1, 0, 655374, 1, 1, 655375, 1, 0, 655376, 1, 0, 655377, 1, 0, 655378, 1, 0, 655379, 1, 1, 655380, 1, 0, 655381, 1, 0, 655382, 1, 0, 655383, 1, 0 )
 
 [node name="paredes" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
@@ -45,16 +48,40 @@ scale = Vector2( 2, 2 )
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 262160, 3, 4, 327696, 3, 65540, 327700, 3, 2, 327701, 3, 0, 393237, 3, 65536, 458766, 3, 1 )
+tile_data = PoolIntArray( 458766, 3, 1 )
 
 [node name="door" parent="." instance=ExtResource( 6 )]
 position = Vector2( 412, 224 )
 scale = Vector2( 2, 2 )
 
+[node name="estante_livro" parent="." instance=ExtResource( 8 )]
+position = Vector2( 559.485, 161 )
+scale = Vector2( 2, 2 )
+text = {
+1: "São meus livros e cadernos da escola.",
+2: "Isso me lembra que preciso comer algo agora para não me atrasar"
+}
+
+[node name="cama_benhur" parent="." instance=ExtResource( 10 )]
+position = Vector2( 688.367, 192 )
+scale = Vector2( 2, 2 )
+text = {
+1: "Não quero dormir agora."
+}
+
+[node name="mesa_cabeceira" parent="." instance=ExtResource( 9 )]
+position = Vector2( 655.397, 176 )
+scale = Vector2( 2, 2 )
+text = {
+1: "Já é meio dia.",
+2: "Melhor ir falar com a mamãe."
+}
+
 [node name="transition_area" parent="." instance=ExtResource( 7 )]
 position = Vector2( 391.64, 225 )
 scale = Vector2( 1.27911, -3.39121 )
-next_room = "res://scenes/level.tscn"
+next_room = "res://scenes/mundo_normal.tscn"
+eventNumber = 1
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 655, 221 )
+position = Vector2( 655.397, 225 )

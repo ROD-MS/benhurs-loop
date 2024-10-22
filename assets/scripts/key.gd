@@ -1,6 +1,9 @@
 extends Interaction
 
 export var id: int
+export var task_id: int
+export var vanish: bool
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +16,9 @@ func _process(delta):
 	if action && canInspect && hud_textbox.get_child_count() == 0:
 		label.add_color_override("font_color", Color(1, 1, 1))
 		label.visible = false
-		level.open_door(id)
+		Global.open_door(id)
 		new_dialog()
-		queue_free()
-		print(level.keysGetted)
+		level.new_task(task_id)
+		if vanish:
+			queue_free()
+		print(Global.keysGetted)

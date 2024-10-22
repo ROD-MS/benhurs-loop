@@ -10,7 +10,7 @@ export var text: Dictionary = {}
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	label.text = text[id]
-	print(text.size())
+#	print(text.size())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,7 +25,7 @@ func _process(delta):
 			label.percent_visible = 0
 		else:
 			queue_free()
-		print(id)
+#		print(id)
 
 func _on_Timer_timeout():
 	if label.get_visible_characters() != label.get_total_character_count():

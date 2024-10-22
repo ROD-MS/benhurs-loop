@@ -12,10 +12,7 @@
 [node name="task" parent="HUD_task" instance=ExtResource( 4 )]
 visible = false
 task = {
-1: "Preciso achar meus pais",
-2: "Ah, acho que eles estão na sala",
-3: "Que coisa estranha. Mas não vou perder meu foco",
-4: "Não estão aqui.. onde podem estar?"
+1: "Não gosto desse lugar... mas espero achar minha mãe aqui."
 }
 
 [node name="HUD_textbox" type="CanvasLayer" parent="."]
