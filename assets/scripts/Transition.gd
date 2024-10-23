@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 onready var animation = $AnimationPlayer
-var next_scene
+export var next_scene = ""
 
 func fade_into(scene):
 	next_scene = scene
