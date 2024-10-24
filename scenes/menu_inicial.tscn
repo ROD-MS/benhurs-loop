@@ -57,7 +57,7 @@ script = ExtResource( 3 )
 position = Vector2( 256, 298 )
 scale = Vector2( 24, 24 )
 frames = SubResource( 7 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="titulo" type="Label" parent="CanvasLayer"]
@@ -79,7 +79,7 @@ custom_fonts/font = SubResource( 9 )
 text = "DEMO"
 
 [node name="press_space" type="Label" parent="CanvasLayer"]
-anchor_top = 1.0
+anchor_top = 0.996667
 anchor_bottom = 0.996667
 margin_left = 502.0
 margin_top = -225.0

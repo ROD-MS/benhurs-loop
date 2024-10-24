@@ -13,8 +13,8 @@ func _on_Area_cutscene_area_entered(area):
 		area.get_parent().queue_free()
 		var chair = CHAIR.instance()
 		get_parent().add_child(chair)
-		chair.scale.x = 2
-		chair.scale.y = 2
+		chair.scale.x = 1
+		chair.scale.y = 1
 		chair.global_position.x = global_position.x
 		chair.global_position.y = global_position.y + 32
 		var collision_chair = chair.get_child(3)

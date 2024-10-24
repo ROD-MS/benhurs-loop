@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/tiles/wall_furniture.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
@@ -19,7 +19,7 @@
 [ext_resource path="res://scenes/objects/kitchen/fogao.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scenes/objects/kitchen/pia.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/objects/living_room/cabeceira_sala.tscn" type="PackedScene" id=19]
-[ext_resource path="res://scenes/objects/living_room/tv.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/objects/living_room/tv_pipocando.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/objects/estante_livro.tscn" type="PackedScene" id=21]
 [ext_resource path="res://scenes/transition_area.tscn" type="PackedScene" id=22]
 [ext_resource path="res://scenes/objects/living_room/sofa.tscn" type="PackedScene" id=23]
@@ -27,6 +27,7 @@
 [ext_resource path="res://scenes/objects/kitchen/cadeira.tscn" type="PackedScene" id=25]
 [ext_resource path="res://scenes/task_area.tscn" type="PackedScene" id=26]
 [ext_resource path="res://scenes/textbox.tscn" type="PackedScene" id=27]
+[ext_resource path="res://scenes/objects/kitchen/mesa.tscn" type="PackedScene" id=28]
 
 [node name="level" type="Node2D"]
 position = Vector2( 1, -1 )
@@ -78,7 +79,7 @@ scale = Vector2( 2, 2 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 1703953, 3, 65537, 1703954, 3, 65537, 1703955, 3, 65538, 1703956, 3, 65538, 1703969, 3, 65537, 1703970, 3, 65538, 1769489, 3, 65537, 1769490, 3, 65537, 1769491, 3, 65538, 1769492, 3, 65538 )
+tile_data = PoolIntArray( 1703969, 3, 65537, 1703970, 3, 65538 )
 
 [node name="door" parent="." instance=ExtResource( 8 )]
 position = Vector2( 951, 168 )
@@ -164,21 +165,21 @@ text = {
 }
 
 [node name="balcao" parent="." instance=ExtResource( 16 )]
-position = Vector2( 543, 721 )
+position = Vector2( 544, 720 )
 scale = Vector2( 1.5, 1.5 )
 text = {
 1: "Nada útil por aqui."
 }
 
 [node name="fogao" parent="." instance=ExtResource( 17 )]
-position = Vector2( 685, 721 )
+position = Vector2( 680, 716 )
 scale = Vector2( 1.5, 1.5 )
 text = {
 1: "A mamãe não me deixa usar o fogão."
 }
 
 [node name="balcao2" parent="." instance=ExtResource( 16 )]
-position = Vector2( 639, 721 )
+position = Vector2( 640, 720 )
 scale = Vector2( 1.5, 1.5 )
 text = {
 1: "Nada útil por aqui."
@@ -199,7 +200,7 @@ haveEvent = true
 task_id = 4
 
 [node name="pia" parent="." instance=ExtResource( 18 )]
-position = Vector2( 591, 722 )
+position = Vector2( 592, 712 )
 scale = Vector2( 1.5, 1.5 )
 text = {
 1: "É só a pia, não tem nada aqui."
@@ -242,29 +243,30 @@ text = {
 2: "Não consigo desligar..."
 }
 
-[node name="tv" parent="." instance=ExtResource( 20 )]
+[node name="tv_pipocando" parent="." instance=ExtResource( 20 )]
 position = Vector2( 1087, 929 )
 scale = Vector2( 1.5, 1.5 )
-text = {
-1: "Como a TV está ligada?",
-2: "Não está ligada na tomada."
-}
 
 [node name="geladeira" parent="." instance=ExtResource( 15 )]
 position = Vector2( 471, 745 )
+scale = Vector2( 2, 2 )
 text = {
 1: "Parece que tem alguma coisa aqui em cima.",
 2: "Não consigo alcançar."
 }
 
 [node name="cadeira" parent="." instance=ExtResource( 25 )]
-position = Vector2( 687, 889 )
+position = Vector2( 610, 853 )
 scale = Vector2( 2, 2 )
 text = {
 1: "Posso usar essa cadeira pra subir em algum lugar mais alto."
 }
 needEvent_number = 4
 pickUp = true
+
+[node name="mesa" parent="." instance=ExtResource( 28 )]
+position = Vector2( 616, 860 )
+scale = Vector2( 4, 4 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 679, 185 )
@@ -287,6 +289,7 @@ eventNumber = 2
 task_id = 3
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_left = 359.0
 margin_top = -15.0
 margin_right = 1335.0

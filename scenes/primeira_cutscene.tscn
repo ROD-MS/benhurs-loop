@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/sprites/cutscene_inicial_pronta-Sheet.jpg" type="Texture" id=1]
 [ext_resource path="res://assets/scripts/Transition.gd" type="Script" id=2]
-[ext_resource path="res://assets/scripts/primeira_cutscene.gd" type="Script" id=3]
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
@@ -148,7 +147,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 3.3, 3.8, 4.3, 4.5 ),
+"times": PoolRealArray( 0, 3.3, 3.8, 4.2, 4.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
@@ -160,7 +159,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 4.2 ),
+"times": PoolRealArray( 4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -181,7 +180,6 @@ tracks/3/keys = {
 }
 
 [node name="primeira_cutscene" type="Node2D"]
-script = ExtResource( 3 )
 
 [node name="transition" type="CanvasLayer" parent="."]
 script = ExtResource( 2 )
@@ -199,6 +197,7 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="transition"]
 root_node = NodePath("../..")
+autoplay = "cutscene_1"
 anims/Fade = SubResource( 10 )
 anims/RESET = SubResource( 11 )
 anims/cutscene_1 = SubResource( 12 )

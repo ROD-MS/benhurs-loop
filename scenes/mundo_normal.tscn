@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/objects/estante_livro.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/objects/living_room/tv.tscn" type="PackedScene" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://assets/tiles/wall_furniture.tres" type="TileSet" id=23]
 [ext_resource path="res://assets/tiles/floor.tres" type="TileSet" id=24]
 [ext_resource path="res://assets/scripts/global.gd" type="Script" id=25]
+[ext_resource path="res://scenes/objects/kitchen/mesa.tscn" type="PackedScene" id=26]
 
 [node name="mundo_normal" type="Node2D"]
 script = ExtResource( 25 )
@@ -63,7 +64,7 @@ scale = Vector2( 2, 2 )
 tile_set = ExtResource( 23 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 1703953, 3, 65537, 1703954, 3, 65537, 1703955, 3, 65538, 1703956, 3, 65538, 1703969, 3, 65537, 1703970, 3, 65538, 1769489, 3, 65537, 1769490, 3, 65537, 1769491, 3, 65538, 1769492, 3, 65538 )
+tile_data = PoolIntArray( 1703969, 3, 65537, 1703970, 3, 65538 )
 
 [node name="door" parent="." instance=ExtResource( 7 )]
 position = Vector2( 951, 168 )
@@ -154,25 +155,33 @@ text = {
 1: "Nada de útil por aqui."
 }
 
+[node name="pia" parent="." instance=ExtResource( 18 )]
+position = Vector2( 592, 712 )
+scale = Vector2( 1.5, 1.5 )
+text = {
+1: "A água da pia fica muito gelada no inverno.",
+2: "Ainda bem que ta ficando mais calor."
+}
+
+[node name="balcao2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 640, 720 )
+scale = Vector2( 1.5, 1.5 )
+text = {
+1: "Nada de interessante aqui."
+}
+
 [node name="balcao" parent="." instance=ExtResource( 6 )]
-position = Vector2( 543, 721 )
+position = Vector2( 544, 720 )
 scale = Vector2( 1.5, 1.5 )
 text = {
 1: "Nada de interessante aqui."
 }
 
 [node name="fogao" parent="." instance=ExtResource( 12 )]
-position = Vector2( 685, 721 )
+position = Vector2( 680, 716 )
 scale = Vector2( 1.5, 1.5 )
 text = {
 1: "A mamãe não me deixa usar o fogão."
-}
-
-[node name="balcao2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 639, 721 )
-scale = Vector2( 1.5, 1.5 )
-text = {
-1: "Nada de interessante aqui."
 }
 
 [node name="diary" parent="." instance=ExtResource( 13 )]
@@ -185,14 +194,6 @@ text = {
 5: "O que? As páginas estão passando sozinhas.",
 6: "\"GAROTO TOLO, VAI PRECISAR SE ESFORÇAR MAIS SE QUISER VER SUA MÃE DE NOVO!\"",
 7: "\"VOU TE DAR UMA DICA, O QUE VOCÊ PRECISA ESTA NO PONTO MAIS ALTO, ONDE O SOL E A LUA SE ENCONTRAM.\""
-}
-
-[node name="pia" parent="." instance=ExtResource( 18 )]
-position = Vector2( 591, 722 )
-scale = Vector2( 1.5, 1.5 )
-text = {
-1: "A água da pia fica muito gelada no inverno.",
-2: "Ainda bem que ta ficando mais calor."
 }
 
 [node name="lixeira" parent="." instance=ExtResource( 20 )]
@@ -240,17 +241,22 @@ text = {
 
 [node name="geladeira" parent="." instance=ExtResource( 3 )]
 position = Vector2( 471, 745 )
+scale = Vector2( 2, 2 )
 text = {
 1: "Gosto muito desses adesivos de sol e lua que a mamãe colocou na geladeira."
 }
 
 [node name="benhur_mother" parent="." instance=ExtResource( 22 )]
-position = Vector2( 608, 888 )
+position = Vector2( 610, 830 )
 scale = Vector2( 2, 2 )
 text = {
 1: "Oii meu bem! Vai escovar os dentes que daqui a pouco tem aula."
 }
 task_id = 2
+
+[node name="mesa" parent="." instance=ExtResource( 26 )]
+position = Vector2( 616, 860 )
+scale = Vector2( 4, 4 )
 
 [node name="transition_area" parent="." instance=ExtResource( 5 )]
 position = Vector2( 720, 168 )
