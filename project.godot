@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Benhur’s Loop"
-run/main_scene="res://scenes/primeira_cutscene.tscn"
+run/main_scene="res://scenes/menu_inicial.tscn"
 boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://icon.png"
 

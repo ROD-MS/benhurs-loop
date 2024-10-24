@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/tiles/wall_furniture.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://scenes/objects/living_room/radio.tscn" type="PackedScene" id=24]
 [ext_resource path="res://scenes/objects/kitchen/cadeira.tscn" type="PackedScene" id=25]
 [ext_resource path="res://scenes/task_area.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scenes/textbox.tscn" type="PackedScene" id=27]
 
 [node name="level" type="Node2D"]
 position = Vector2( 1, -1 )
@@ -47,6 +48,12 @@ task = {
 }
 
 [node name="HUD_textbox" type="CanvasLayer" parent="."]
+
+[node name="textbox" parent="HUD_textbox" instance=ExtResource( 27 )]
+text = {
+1: "Faltou luz de novo... não gosto de ficar no escuro.",
+2: "Ainda bem que já vou sair!"
+}
 
 [node name="chão" type="TileMap" parent="."]
 position = Vector2( -781, -24 )
@@ -251,7 +258,7 @@ text = {
 }
 
 [node name="cadeira" parent="." instance=ExtResource( 25 )]
-position = Vector2( 527, 885 )
+position = Vector2( 687, 889 )
 scale = Vector2( 2, 2 )
 text = {
 1: "Posso usar essa cadeira pra subir em algum lugar mais alto."
@@ -278,3 +285,10 @@ position = Vector2( 759, 393 )
 scale = Vector2( 1, 2 )
 eventNumber = 2
 task_id = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 359.0
+margin_top = -15.0
+margin_right = 1335.0
+margin_bottom = 1033.0
+color = Color( 0, 0, 0, 0.392157 )

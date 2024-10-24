@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/tiles/floor.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/tiles/wall_furniture.tres" type="TileSet" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://scenes/objects/basement/caixa3.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/objects/basement/caixa2.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/objects/basement/caixa1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/sprites/light_occluder.webp" type="Texture" id=9]
+[ext_resource path="res://scenes/transition_area.tscn" type="PackedScene" id=10]
 
 [node name="basement" type="Node2D"]
 
@@ -105,3 +107,26 @@ text = {
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1004, 204 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -24.0
+margin_top = 16.0
+margin_right = 1048.0
+margin_bottom = 352.0
+color = Color( 0, 0, 0, 0.392157 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 48, 208 )
+texture = ExtResource( 9 )
+texture_scale = 2.5
+energy = 4.2
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_gradient_length = 5.0
+shadow_filter = 2
+shadow_filter_smooth = 30.0
+
+[node name="transition_area" parent="." instance=ExtResource( 10 )]
+position = Vector2( 160, 216 )
+scale = Vector2( 1, 10 )
+next_room = "res://scenes/tela_creditos.tscn"
